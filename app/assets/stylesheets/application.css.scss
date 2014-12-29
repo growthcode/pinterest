@@ -1,0 +1,58 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require font-awesome
+*= require_self
+*/
+
+@import "bootswatch/paper/variables";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootswatch/paper/bootswatch";
+
+@import "pages";
+
+
+/* helpers for outline */
+.outline-1-red {
+  outline: 1px solid red;
+}
+.outline-2-red {
+  outline: 2px solid red;
+}
+.outline-3-red {
+  outline: 3px solid red;
+}
+
+.outline-1-blue {
+  outline: 1px solid blue;
+}
+.outline-2-blue {
+  outline: 2px solid blue;
+}
+.outline-3-blue {
+  outline: 3px solid blue;
+}
+
+.outline-1-green {
+  outline: 1px solid green;
+}
+.outline-2-green {
+  outline: 2px solid green;
+}
+.outline-3-green {
+  outline: 3px solid green;
+}
+
+.text-align-center{
+  text-align: center;
+}
