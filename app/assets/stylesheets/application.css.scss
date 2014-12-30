@@ -14,13 +14,12 @@
 *= require_self
 */
 
-@import "bootswatch/paper/variables";
+@import "bootswatch/readable/variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "bootswatch/paper/bootswatch";
+@import "bootswatch/readable/bootswatch";
 
 @import "pages";
-
 
 /* helpers for outline */
 .outline-1-red {

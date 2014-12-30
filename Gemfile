@@ -21,7 +21,7 @@ end
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootswatch-rails'
-gem "simple_form"
+gem 'simple_form', '~> 3.1.0.rc2'
 gem 'devise'
 
 # Use jquery as the JavaScript library

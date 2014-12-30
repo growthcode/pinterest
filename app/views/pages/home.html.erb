@@ -1,14 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>Welcome to a Pinterest Clone by GrowthCode!</h1>
-      <p>
-        You've found the home page for the
-        <%= link_to "Pinterest Clone", root_path %>, so come on and it out!
-      </p>
-      <p>
-        <%= link_to "New User", '#', { class: "btn btn-large btn-primary" } %>
-      </p>
+<!-- if user is not signed in -->
+<% if !user_signed_in? %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Welcome to a Pinterest Clone by GrowthCode!</h1>
+        <br>
+        <p>
+          You've found the home page for the
+          <%= link_to "Pinterest Clone", root_path %>, so come on, try it out!
+        </p>
+        <br>
+        <p>
+          <%= link_to "New User", 'new_user_session_path', { class: "btn btn-large btn-primary" } %>
+        </p>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
+
