@@ -24,6 +24,7 @@ gem 'bootswatch-rails'
 gem 'simple_form', '~> 3.1.0.rc2'
 gem 'devise'
 gem "paperclip", "~> 4.2"
+gem 'aws-sdk'
   
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
