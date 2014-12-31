@@ -22,6 +22,7 @@
 @import "pages";
 @import "pins";
 
+
 /* helpers for outline */
 .outline-1-red {
   outline: 1px solid red;
@@ -55,4 +56,16 @@
 
 .text-align-center{
   text-align: center;
+}
+
+// Application SCSS
+body {
+  padding-top: 80px;
+}
+
+.footer{
+  margin-top: 50px;
+  a {
+    color: gray;
+  }
 }
