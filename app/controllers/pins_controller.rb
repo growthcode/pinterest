@@ -5,8 +5,12 @@ class PinsController < ApplicationController
   respond_to :html
 
   def index
-    @pins = current_user.pins.all
-    @pins = current_user.pins.order("created_at desc")
+    if current_user
+      @pins = current_user.pins.order(created_at: :desc)
+    else
+      @pins = Pin.order(created_at: :desc)
+    end
+
     respond_with(@pins)
   end
 
