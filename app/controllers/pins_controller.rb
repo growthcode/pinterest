@@ -6,6 +6,7 @@ class PinsController < ApplicationController
 
   def index
     @pins = current_user.pins.all
+    @pins = current_user.pins.order("created_at desc")
     respond_with(@pins)
   end
 
