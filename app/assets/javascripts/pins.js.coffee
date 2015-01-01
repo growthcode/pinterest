@@ -3,26 +3,23 @@
 
 
 $ ->
-  $windowObj = $(window)
-  $showPinRow = $("#showPinRow")
   # pins on index page
   $pins = $("#pins")
-  $showPinContainer = $("#showPinContainer")
   $pins.imagesLoaded ->
     $pins.masonry
-      itemSelector: ".box-index-pin"
+      itemSelector: "#boxIndexPin"
 
-
-
+$ ->
   # Pin show/edit page
+  $windowObj = $(window)
+  $showPinRow = $("#showPinRow")
+  $showPinContainer = $("#showPinContainer")
   $showPin = $("#showPin")
-  $showPinImgWidth = $("#showPin img").outerWidth()
-  $showPinImgHeight = $("#showPin img").outerHeight()
-  $showPinWidth = $showPinImgWidth
+  $showPinWidth = $("#showPin img").outerWidth()
   $showPinHeight = $("#showPin").outerHeight()
 
   setShowPinContainerSize = ->
-    if $showPinImgHeight > 400 
+    if $showPinHeight > 400 
       $showPinContainer.outerWidth( $showPinWidth )
       $showPinContainer.outerHeight( $showPinHeight )
     else
@@ -35,6 +32,7 @@ $ ->
     $showPin.offset
       left: ($showPinRow.width() - $showPin.outerWidth()) / 2
 
+
   $showPin.imagesLoaded ->
     $showPinWidth = $("#showPin img").outerWidth()
     $showPinHeight = $("#showPin").outerHeight()
@@ -46,3 +44,4 @@ $ ->
     $windowObj.resize(adjustLayout).resize()
 
 
+  adjustLayout()
