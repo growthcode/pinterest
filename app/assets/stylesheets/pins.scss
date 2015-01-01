@@ -1,7 +1,8 @@
 /*  Place all the styles related to the matching controller here.
 They will automatically be included in application.css. */
 
-.box {
+// jQuery Masonry styling of box on index page for pins
+.box-index-pin {
   margin: 5px;
   padding: 5px;
   font-size: 11px;
@@ -16,8 +17,16 @@ They will automatically be included in application.css. */
   .pin-text {
     margin-left: 10px;
   }
-  .description {
-    margin-top: 10px;
+}
+
+.description {
+  margin-top: 10px;
+}
+
+.well {
+  display: inline-block;
+  img {
+    max-width: 880px;
   }
 }
 

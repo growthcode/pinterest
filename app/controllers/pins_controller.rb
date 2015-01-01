@@ -1,20 +1,16 @@
 class PinsController < ApplicationController
-  before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :set_pin, only: [:edit, :update, :destroy]
   before_filter :authenticate_user!, except: [:index, :show]
 
   respond_to :html
 
   def index
-    if current_user
-      @pins = current_user.pins.order(created_at: :desc)
-    else
-      @pins = Pin.order(created_at: :desc)
-    end
-
+    set_pin_index
     respond_with(@pins)
   end
 
   def show
+    set_pin_show
     respond_with(@pin)
   end
 
@@ -29,7 +25,7 @@ class PinsController < ApplicationController
   def create
     @pin = current_user.pins.new(pin_params)
     @pin.save
-    respond_with(@pin)
+    respond_with(@pin, location: :root)
   end
 
   def update
@@ -43,13 +39,28 @@ class PinsController < ApplicationController
   end
 
   private
+    def set_pin_index
+      if current_user
+        @pins = current_user.pins.order(created_at: :desc)
+      else
+        @pins = Pin.order(created_at: :desc)
+      end
+    end
+
+    def set_pin_show
+      if current_user
+        @pin = current_user.pins.find(params[:id])
+      else
+        @pin = Pin.find(params[:id])
+      end
+    end
+
     def set_pin
       @pin = current_user.pins.find(params[:id])
     end
 
     def pin_params
       params.require(:pin).permit(:description, :image, :image_remote_url)
-      # params.require(:pin).permit(:description, images_attributes: [:image])
     end
 
 end

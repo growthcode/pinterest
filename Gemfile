@@ -18,6 +18,7 @@ group :assets do
   # gem 'therubyracer',  platforms: :ruby
   
 end
+
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootswatch-rails'
@@ -25,6 +26,7 @@ gem 'simple_form', '~> 3.1.0.rc2'
 gem 'devise'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
+gem 'faker'
   
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'pins#index'
+  get 'pins' => 'root'
 
   get 'about' => 'pages#about'
 

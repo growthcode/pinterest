@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.masonry.pkgd
+//= imagesloaded.pkgd.js
 //= require turbolinks
-//= require jquery.masonry.pkgd.js
 //= require bootstrap-sprockets
+//= pins.js.coffee
 //= require_tree .
