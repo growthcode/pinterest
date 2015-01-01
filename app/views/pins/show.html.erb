@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="row">
-    <div class="show-pic-container">
-      <div class="well show-pic">
-        <%= image_tag @pin.image %>
+  <div id="showPinRow" class="row">
+    <div id="showPinContainer" class="col-xs-12">
+      <div id="showPin" class="well">
+        <%= image_tag @pin.image, class: "show-image" %>
         <p class="description"><%= @pin.description %></p>
         <p><%= @pin.user.name %></p>
         <% if current_user == @pin.user %>
