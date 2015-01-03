@@ -8,35 +8,39 @@ $ ->
     $pins.masonry
       itemSelector: "#boxIndexPin"
 
-
 # Pin Show page
 $ ->
   # set jQuery object variables
   $windowObj = $(window)
   $showPinContainer = $("#showPinContainer")
   $showPin = $("#showPin")
+  $showPinRow = $("#showPinRow")
   $showPinImg = $("#showPin img")
   $showPinHeight = $("#showPin").outerHeight()
   $showPinImgWidth = $showPinImg.outerWidth()
 
   setShowPinContainerHeight = ->
-    if $showPinHeight > 450
-      $showPinContainer.outerHeight( $showPinHeight )
-    else
+    if $showPinHeight < 450
       $showPinContainer.outerHeight( 450 )
 
   setShowPinContainerWidth = ->
     if $showPinImgWidth < 200
-      $showPinImg.outerWidth( 200 )
-    else if $showPinImgWidth > 300 
-      $showPinImg.outerWidth( 300 )
+      $showPin.outerWidth( 200 )
+    else if $showPinImgWidth > 700
+      $showPinImg.outerWidth( 700 )
+    else
+      $showPinContainer.outerWidth( $showPinImgWidth )
 
   setShowPinContainerSize = ->
-    setShowPinContainerHeight()
     setShowPinContainerWidth()
+    setShowPinContainerHeight()
 
-  setShowPinContainerSize()
+  adjustLayout = ->
+    setShowPinContainerSize()
+    $showPinContainer.offset
+      left: ($showPinRow.width() - $showPin.outerWidth()) / 2
 
+  $windowObj.resize(adjustLayout).resize()
 
 
 
@@ -58,13 +62,7 @@ $ ->
 # ====================================
   # TODO: use resize to center show div
   # put ShowPinDiv in middle screen; adjusts if screen is resized
-  
-  # adjustLayout = ->
-  #   setShowPinContainerSize()
-  #   $showPinContainer.offset
-  #     left: ($showPinRow.width() - $showPin.outerWidth()) / 2
 
-  # $windowObj.resize(adjustLayout).resize()
 
 # ===============
   # TODO: create fade in animation when show is clicked.
