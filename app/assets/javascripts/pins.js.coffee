@@ -8,7 +8,8 @@ $ ->
     $pins.masonry
       itemSelector: "#boxIndexPin"
 
-# Pin show/edit page
+
+# Pin Show page
 $ ->
   # set jQuery object variables
   $windowObj = $(window)
