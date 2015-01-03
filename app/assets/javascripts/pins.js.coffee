@@ -1,47 +1,70 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 
-
+# pins on index page
 $ ->
-  # pins on index page
   $pins = $("#pins")
   $pins.imagesLoaded ->
     $pins.masonry
       itemSelector: "#boxIndexPin"
 
+# Pin show/edit page
 $ ->
-  # Pin show/edit page
+  # set jQuery object variables
   $windowObj = $(window)
-  $showPinRow = $("#showPinRow")
   $showPinContainer = $("#showPinContainer")
   $showPin = $("#showPin")
-  $showPinWidth = $("#showPin img").outerWidth()
+  $showPinImg = $("#showPin img")
   $showPinHeight = $("#showPin").outerHeight()
+  $showPinImgWidth = $showPinImg.outerWidth()
 
-  setShowPinContainerSize = ->
-    if $showPinHeight > 400 
-      $showPinContainer.outerWidth( $showPinWidth )
+  setShowPinContainerHeight = ->
+    if $showPinHeight > 450
       $showPinContainer.outerHeight( $showPinHeight )
     else
-      $showPinContainer.outerWidth( $showPinWidth )
-      $showPinContainer.outerHeight( 400 )
+      $showPinContainer.outerHeight( 450 )
+
+  setShowPinContainerWidth = ->
+    if $showPinImgWidth < 200
+      $showPinImg.outerWidth( 200 )
+    else if $showPinImgWidth > 300 
+      $showPinImg.outerWidth( 300 )
+
+  setShowPinContainerSize = ->
+    setShowPinContainerHeight()
+    setShowPinContainerWidth()
+
+  setShowPinContainerSize()
 
 
-  adjustLayout = ->
-    setShowPinContainerSize()
-    $showPin.offset
-      left: ($showPinRow.width() - $showPin.outerWidth()) / 2
 
 
-  $showPin.imagesLoaded ->
-    $showPinWidth = $("#showPin img").outerWidth()
-    $showPinHeight = $("#showPin").outerHeight()
-    setShowPinContainerSize()
-    $showPinContainer.animate 
-      opacity: 1
-    , 800
-    adjustLayout()
-    $windowObj.resize(adjustLayout).resize()
 
 
-  adjustLayout()
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ====================================
+  # TODO: use resize to center show div
+  # put ShowPinDiv in middle screen; adjusts if screen is resized
+  
+  # adjustLayout = ->
+  #   setShowPinContainerSize()
+  #   $showPinContainer.offset
+  #     left: ($showPinRow.width() - $showPin.outerWidth()) / 2
+
+  # $windowObj.resize(adjustLayout).resize()
+
+# ===============
+  # TODO: create fade in animation when show is clicked.
+  # $showPinContainer.fadeIn(1500)
