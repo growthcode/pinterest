@@ -9,7 +9,7 @@ $ ->
       itemSelector: "#boxIndexPin"
 
 # Pin Show page
-$ ->
+$(window).load ->
   # set jQuery object variables
   $windowObj = $(window)
   $showPinContainer = $("#showPinContainer")
@@ -42,26 +42,6 @@ $ ->
 
   $windowObj.resize(adjustLayout).resize()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ====================================
-  # TODO: use resize to center show div
-  # put ShowPinDiv in middle screen; adjusts if screen is resized
 
 
 # ===============
