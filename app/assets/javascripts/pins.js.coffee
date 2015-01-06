@@ -41,9 +41,3 @@ $(window).load ->
       left: ($showPinRow.width() - $showPin.outerWidth()) / 2
 
   $windowObj.resize(adjustLayout).resize()
-
-
-
-# ===============
-  # TODO: create fade in animation when show is clicked.
-  # $showPinContainer.fadeIn(1500)
